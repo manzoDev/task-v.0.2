@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import logo from './logo.svg'
 import './App.css';
+import { Task } from './interfaces/Task.interface';
 
-function App() {
+
+interface Props {
+  title: string
+}
+
+export function App({title}:Props) {
+
+  const [task, setTask] = useState<Task[]>([
+    {
+      id:1,
+      title: 'Aprender React',
+      description: 'Profundizar',
+      completed: false
+    }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-dark text-white" style={{height: '100vh'}}>
+      {/* Navbar */}
+      <nav className='navbar navbar-dark bg-primary'>
+        <div className='container'>
+          <a href="/" className='navbar-brand'>
+            <img src={logo} alt='React Logo' style={{width: '4rem'}}/>
+            {title}
+            </a>
+        </div>
+      </nav>
+      <main className="container p-4">
+      
+      </main>
     </div>
   );
 }
 
-export default App;
