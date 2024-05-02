@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function App({ title }: Props) {
-  const [task, setTask] = useState<Task[]>([
+  const [tasks, setTasks] = useState<Task[]>([
     {
       id: 1,
       title: "Aprender React",
@@ -18,6 +18,8 @@ export function App({ title }: Props) {
       completed: false,
     },
   ]);
+
+  const newAddTask = (task: Task) => setTasks([...tasks, task]);
 
   return (
     <div className="bg-dark text-white" style={{ height: "100vh" }}>
@@ -34,12 +36,12 @@ export function App({ title }: Props) {
       <main className="container p-4">
         <div className="row">
           <div className="col-md-4">
-            <TaskForm />
+            <TaskForm newANewTask={newAddTask} />
           </div>
 
           <div className="col-md-8">
             <div className="row">
-              <TaskList tasks={task} />
+              <TaskList tasks={tasks} />
             </div>
           </div>
         </div>
