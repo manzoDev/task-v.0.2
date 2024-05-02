@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'bootswatch/dist/yeti/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/journal/bootstrap.min.css';
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App title='React and Typescript' />
+    <App /*title='React and Typescript'*//>
   </React.StrictMode>
 );
 

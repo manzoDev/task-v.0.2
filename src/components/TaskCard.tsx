@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Task } from "../interfaces/Task.interface";
 
-export default function TaskCard() {
+interface Props {
+  task: Task;
+}
+
+export default function TaskCard({ task }: Props) {
   return (
-    <div>
-      
+    <div className="card card-body bg-secondary rounded-0 text-dark">
+      <h2>{task.title}</h2>
+      <p>{task.description}</p>
+      <button className="btn btn-danger">
+        delete
+      </button>
     </div>
-  )
+  );
 }

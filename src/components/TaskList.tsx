@@ -1,19 +1,19 @@
-import React from 'react'
-import { Task } from '../interfaces/Task.interface'
+import React from "react";
+import { Task } from "../interfaces/Task.interface";
+import TaskCard from "./TaskCard";
 
 interface Props {
-  tasks: Task[]
+  tasks: Task[];
 }
 
-export default function TaskList() {
+export default function TaskList({ tasks }: Props) {
   return (
-    <div></div>
-    /*{
-      task.map(tasks => (
-        <div>
-        <h2 key={tasks.id}>{tasks.title}</h2>
+    <div>
+      {tasks.map((task) => (
+        <div className="col-md-3">
+          <TaskCard task={task} />
         </div>
-      ))
-    }*/
-  )
+      ))}
+    </div>
+  );
 }
