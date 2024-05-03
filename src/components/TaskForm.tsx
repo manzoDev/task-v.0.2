@@ -20,11 +20,15 @@ export default function TaskForm({newANewTask}: Props) {
     setTask({ ...task, [name]: value });
   };
 
+  const handleNewTask = () => {
+    
+  }
+
   return (
     <div className="card card-body bg-secondary text-dark">
       <h1>Add Task</h1>
 
-      <form onSubmit={}>
+      <form onSubmit={handleNewTask}>
         <input
           type="text"
           name="title"
