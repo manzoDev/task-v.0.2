@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Task } from "../interfaces/Task.interface";
 
@@ -20,8 +20,9 @@ export default function TaskForm({newANewTask}: Props) {
     setTask({ ...task, [name]: value });
   };
 
-  const handleNewTask = () => {
-    
+  const handleNewTask = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    newANewTask(task)
   }
 
   return (
